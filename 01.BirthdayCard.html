@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>呆呆雅的生日卡片</title>
+    <script type="text/javascript">
+        let guitarMusic, youtubeMusic, happyBirthday, timer, spanTimer ;
+        window.onload=function(){
+        guitarMusic=document.getElementById("guitarMusic") ;
+        youtubeMusic=document.getElementById("youtubeMusic") ;
+        happyBirthday=document.getElementById("happyBirthday") ;
+        timer=document.getElementById("timer") ;
+        spanTimer=document.getElementById("spanTimer") ;
+        happyBirthday.addEventListener("click", ()=>{
+            if(timer.style.display==="none"){
+                timer.style.display="block" ;
+                spanTimer.style.display="inline-block" ;
+            }
+            window.setTimeout(reciprocal, 1000) ;
+            })
+        }
+        function reciprocal(){
+            spanTimer.innerHTML-=1 ;
+            if(spanTimer.innerHTML>0){
+                window.setTimeout(reciprocal, 1000) ;
+            }else{
+                window.location.href="file:///D:/Software/Html%20CSS%20JS%20Training/04.Engineering%20Project/BirthdayCard/Cake.html" ;
+                window.history.back(-1);
+                    }
+            }          
+        function guitarMusicStart(){
+            guitarMusic.play() ;
+        }
+        function guitarMusicPause(){
+            guitarMusic.pause() ;
+        }
+        function youtubeMusicStart(){
+            youtubeMusic.play() ;
+        }
+        function youtubeMusicPause(){
+            youtubeMusic.pause() ;
+        }
+    </script>
+    <style type="text/css">
+        body{
+            margin:0px ;
+            background-color:#FFECF5 ;
+            /* background-image:url("@01.jpg") */
+        }
+        header{
+            display:flex ;
+            justify-content:center ;
+            align-items:center ;
+            flex-wrap:wrap ;
+            background-color:#FF95CA ;
+            font-family:"微軟正黑體" ;
+            font-size:28px ;
+            font-weight:bolder ;
+            color:white ;
+            text-align:center ;
+            padding:5px ;
+        }
+        header>button{
+            flex:none ;
+            margin:10px ;
+            width:180px ;
+            color:black ;
+            background-color:white ;
+            border:3px solid #FF44FF ;
+            border-radius:8px ;
+            padding:12px 12px ;
+            text-align:center ;
+            font-size:12px ;
+            transition-duration:0.4s ;
+            cursor:pointer ;
+            text-decoration:none ;
+            text-transform:uppercase ;
+        }
+        header>button:hover{
+            color:white ;
+            background-color:#FF44FF ;
+        }
+        nav{
+            display:flex ;
+            background-color:#FFC1E0 ;
+            justify-content:space-evenly ;
+            align-items:stretch ;
+            text-align:center ;
+            flex-wrap:wrap ;
+        }
+        nav>p{
+            flex:none ;
+            background-color:white ;
+            width:200px ;
+            font-family:"微軟正黑體" ;
+            font-size:18px ;
+            font-weight:bolder ;
+            color:black ;
+            text-align:center ;
+            margin:10px ;
+            padding:3px ;
+        }
+        nav>img{
+            flex:none ;
+            width:150px ;
+        }
+        article>blockquote{
+            display:flex ;
+            background-color:white ;
+            justify-content:flex-start ;
+            flex-wrap:wrap ;
+            align-items:center ;
+        }
+        article>blockquote>h3{
+            flex:none ;
+            font-family:"微軟正黑體" ;
+            border:1.5px solid black ;
+            margin:5px ;
+            padding:1px ;
+        }
+        article>blockquote>p{
+            font-family:"微軟正黑體" ;
+            margin-left:10px ;
+            padding:1px ;
+        }
+        article>div{
+            display:flex ;
+            justify-content:space-around ;
+            align-items:center ;
+            flex-wrap:wrap ;
+            /* background-color:#ACD6FF ; */
+            margin:15px ;
+        }
+        article>div>img{
+            flex:none ;
+            width:320px ;
+            padding:15px ;
+        }
+        .birthday{
+            flex:none ;
+            padding: 5px 15px ;
+            font-size: 16px ;
+            font-family:"微軟正黑體" ;
+            cursor: pointer ;
+            text-align: center ;   
+            text-decoration: none ;
+            outline: none ;
+            color:white ;
+            background-color:#FF79BC ;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 9px #999999;
+        }
+        .birthday:hover{
+            background-color: #FF359A ;
+            color:#ffffff ;
+        }
+        .birthday:active{
+            background-color: #FF359A;
+            box-shadow: 0 5px #666666;
+            transform: translateY(4px);
+        }
+        .reciprocal{
+            border:2px solid #FF359A ;
+            border-radius:20px ;
+            font-family:"微軟正黑體" ;
+            font-size:16px ;
+            margin-left:10px ;
+            margin-bottom:-5px ;
+            padding:5px ;
+        }
+        .content{
+            border-radius:20px ;
+            font-family:"微軟正黑體" ;
+            font-size:16px ;
+            margin-left:0px ;
+            margin-bottom:-5px ;
+            padding:5px ;
+        }
+        footer{
+            display:flex ;
+            flex-wrap:wrap ;
+            justify-content:space-evenly ;
+        }
+        video{
+            width:480px ;
+            padding:10px ;
+        }
+        @media screen and (max-width:1200px){
+            header>button{
+                width:50% ;
+            }
+            nav>p{
+                width:50% ;
+            }
+            nav>img{
+                width:50% ;
+            }
+        }
+        @media screen and (max-width:400px){
+            header>button{
+                width:90% ;
+                text-align:center ;
+            }
+            nav>p{
+                width:90% ;
+                text-align:center ;
+            }
+            nav>img{
+                width:90% ;
+                text-align:center ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>呆呆雅的生日卡片(Web版~~) 
+        <button onclick="guitarMusicStart()">Music start !! (吉他)</button>
+        <button onclick="guitarMusicPause()">Music pause !! (吉他)</button>
+        <button onclick="youtubeMusicStart()">Music start !! (韓語歌)</button>
+        <button onclick="youtubeMusicPause()">Music pause !! (韓語歌)</button>
+    </header>
+    <nav>
+        <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\01.jpg" />
+        <p>前言</p>
+        <p>生活點滴</p>
+        <p>想說的話</p>
+        <p>生日快樂</p>
+        <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\02.jpg" />
+    </nav>
+    <main>
+        <article>
+            <blockquote>
+                <h3>前言</h3>
+                <p>自學了些程式代碼，不寫一些東西出來好像怪浪費的，雖然以後會不會走這條路也還不確定(最主要的是這行別科系的要轉進來真的需要很多學習時間~兩個月真的是趕中之趕)，</p>
+            </blockquote>
+            <div>
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\03.jpg" />
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\04.jpg" />
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\05.jpg" />
+            </div>
+            <hr/>
+            <blockquote>
+                <h3>生活點滴</h3>
+                <p>自學了些程式代碼，不寫一些東西出來好像怪浪費的，雖然以後會不會走這條路也還不確定(最主要的是這行別科系的要轉進來真的需要很多學習時間~兩個月真的是趕中之趕)，</p>
+            </blockquote>
+            <div>
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\06.jpg" />
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\07.jpg" />
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\08.jpg" />
+            </div>
+            <hr/>
+            <blockquote>
+                <h3>想說的話</h3>
+                <p>自學了些程式代碼，不寫一些東西出來好像怪浪費的，雖然以後會不會走這條路也還不確定(最主要的是這行別科系的要轉進來真的需要很多學習時間~兩個月真的是趕中之趕)，</p>
+            </blockquote>
+            <div>
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\09.jpg" />
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\10.jpg" />
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\11.jpg" />
+            </div>
+            <hr/>
+            <blockquote>
+                <h3>生日快樂</h3>
+                <p>自學了些程式代碼，不寫一些東西出來好像怪浪費的，雖然以後會不會走這條路也還不確定(最主要的是這行別科系的要轉進來真的需要很多學習時間~兩個月真的是趕中之趕)，</p>
+                <button id="happyBirthday" class="birthday">看完點我~~!!</button>
+                <div id="timer" class="reciprocal" style="display:none" >倒數 : <span id="spanTimer" class="content" style="display:none">3</span></div>
+            </blockquote>
+            <div>
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\12.jpg" />
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\13.jpg" />
+                <img src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\14.jpg" />
+            </div>
+            <hr/>
+        </article>
+    </main>
+    <footer>
+        <video id="guitarMusic" src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\彈吉他.mp4" controls loop></video>
+        <video id="youtubeMusic" src="D:\Software\Html CSS JS Training\04.Engineering Project\BirthdayCard\material\雪人The Snowman.mp4" controls loop></video>
+    </footer>
+</body>
+
+</html>
